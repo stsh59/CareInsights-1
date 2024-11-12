@@ -1,94 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Dashboard</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        h1 {
-            color: #333;
-            text-align: center;
-        }
-        .welcome-message {
-            font-size: 1.2em;
-            margin-top: 20px;
-            text-align: center;
-        }
-        .user-info, .features {
-            background-color: #ffffff;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .features ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .features ul li {
-            margin: 10px 0;
-        }
-        .features ul li a {
-            text-decoration: none;
-            color: #1f2d56;
-            font-weight: bold;
-        }
-        .features ul li a:hover {
-            text-decoration: underline;
-        }
-        .logout-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #d9534f;
-            color: white;
-            border-radius: 5px;
-            text-decoration: none;
-            text-align: center;
-        }
-        .logout-button:hover {
-            background-color: #c9302c;
-        }
-    </style>
+    <link rel="stylesheet" href="../static/dashboard.css">
+    <title>Dashboard</title>
 </head>
+
 <body>
-    <div class="container">
-        <h1>Welcome to Your Dashboard</h1>
-        
-        <!-- Welcome message -->
-        <p class="welcome-message">Hello, {{ current_user.username }}! Welcome back to your dashboard.</p>
+    <div id="app" class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <p class="text-white heading">CareInsights</p>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active">Dashboard</a>
+                <a href="#" class="nav-item">Administration</a>
+                <a href="#" class="nav-item">Clinical</a>
+                <a href="#" class="nav-item">Diagnostics</a>
+                <!-- Additional Sidebar links -->
+            </nav>
+        </aside>
 
-        <!-- User information section -->
-        <div class="user-info">
-            <h2>Your Information</h2>
-            <p><strong>Username:</strong> {{ current_user.username }}</p>
-            <p><strong>Role:</strong> {{ current_user.role }}</p>
-            <p><strong>Email:</strong> {{ current_user.email }}</p>
+        <!-- Main Content -->
+        <div class="flex flex-1 flex-col overflow-y-auto overflow-x-hidden main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <p class="title">Dashboard</p>
+                </div>
+                <div class="header-right">
+                    <div id="userDropdown" class="user-dropdown">
+                        <span id="userName" class="user-name">
+                            Hello, {{ current_user.username }}!
+                        </span>
+                        <div id="dropdownMenu" class="dropdown-menu">
+                            <a href="{{ url_for('logout') }}" class="logout-button">Log Out</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Area -->
+            <main class="main">
+                <div class="container">
+                    <p>Your main content goes here.</p>
+                </div>
+            </main>
         </div>
-
-        <!-- Features available to the user -->
-        <div class="features">
-            <h2>Available Features</h2>
-            <ul>
-                <li><a href="{{ url_for('auth.feature1') }}">Feature 1</a></li>
-                <li><a href="{{ url_for('auth.feature2') }}">Feature 2</a></li>
-                <li><a href="{{ url_for('auth.feature3') }}">Feature 3</a></li>
-            </ul>
-        </div>
-
-        <!-- Logout link -->
-        <a href="{{ url_for('auth.logout') }}" class="logout-button">Log Out</a>
     </div>
 </body>
+
 </html>

@@ -7,6 +7,21 @@ from extensions import bcrypt
 from models.user import User
 from models import db
 
+from routes.allergies import allergies_bp
+from routes.careplan import careplans_bp
+from routes.claim import claims_bp
+from routes.condition import condition_bp
+from routes.encounter import encounter_bp
+from routes.immunizations import immunization_bp
+from routes.medication import medication_bp
+from routes.observation import observation_bp
+from routes.organization import organization_bp
+from routes.patient import patient_bp
+from routes.procedures import procedure_bp
+from routes.providers import provider_bp
+from routes.supplies import supplies_bp
+
+
 app = Flask(__name__, template_folder='templates')
 app.config.from_object(Config)
 
@@ -53,6 +68,7 @@ def create_admin():
 # # run this command from your terminal "flask create-admin",  to enter the admin’s username and password, hash the password, and store it in the database with the "admin" role.
 
 
+# Run the app
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()  # Create tables if they don't exist

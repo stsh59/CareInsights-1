@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../static/js/tailwind.js"></script>
     <title>Dashboard</title>
 </head>
 
@@ -45,12 +49,20 @@
 
             <!-- Main Area -->
             <main class="main">
-                <div class="container">
-                    <p>Your main content goes here.</p>
+                <div class="mx-auto max-w-screen-2xl p-2 md:p-6">
+                    <!-- Main Content Area -->
+                    <div id="content"></div>
+
+                    <div class="grid grid-cols-12 gap-4 md:gap-6 2xl:gap-7.5" id="charts">
+
+                    </div>
+
+                    <div id="loading" class="m-16 h-16 w-16 animate-spin hidden"></div>
                 </div>
             </main>
         </div>
     </div>
+    <script src="../static/js/dashboard.js"></script>
 </body>
 
 </html>

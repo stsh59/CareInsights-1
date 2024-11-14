@@ -7,21 +7,6 @@ from extensions import bcrypt
 from models.user import User
 from models import db
 
-from routes.allergies import allergies_bp
-from routes.careplan import careplans_bp
-from routes.claim import claims_bp
-from routes.condition import condition_bp
-from routes.encounter import encounter_bp
-from routes.immunizations import immunization_bp
-from routes.medication import medication_bp
-from routes.observation import observation_bp
-from routes.organization import organization_bp
-from routes.patient import patient_bp
-from routes.procedures import procedure_bp
-from routes.providers import provider_bp
-from routes.supplies import supplies_bp
-
-
 app = Flask(__name__, template_folder='templates')
 app.config.from_object(Config)
 

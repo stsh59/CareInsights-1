@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
-from models import Conditions
-from db import db
+from models import db
+from models.condition import Conditions
 
 condition_bp = Blueprint('conditions', __name__)
 

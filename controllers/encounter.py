@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
-from models import Encounters
-from db import db
+from models import db
+from models.encounter import Encounters
 from ulid import ULID
 
 encounter_bp = Blueprint('encounters', __name__)

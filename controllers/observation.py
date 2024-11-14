@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
-from models import Observations
-from db import db
+from models import db
+from models.observations import Observations
 
 observation_bp = Blueprint('observations', __name__)
 

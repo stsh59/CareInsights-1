@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
-from models import ClaimsTransactions
-from db import db
+from models import db
+from models.claim import ClaimsTransactions
 from ulid import ULID
 from datetime import datetime
 

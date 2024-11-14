@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
-from models import Organizations
-from db import db
+from models import db
+from models.organization import Organizations
 import ulid
 
 organization_bp = Blueprint('organizations', __name__)

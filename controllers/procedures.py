@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
-from models import Procedures
-from db import db
+from models import db
+from models.procedure import Procedures
 from werkzeug.exceptions import NotFound
 
 procedure_bp = Blueprint('procedures', __name__)

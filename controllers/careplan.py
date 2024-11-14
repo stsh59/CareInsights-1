@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
-from models import CarePlans
-from db import db
+from models import db
+from models.careplan import CarePlans
 from ulid import ULID
 
 careplans_bp = Blueprint('careplans', __name__)

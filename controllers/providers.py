@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
-from models import Providers
-from db import db
+from models import db
+from models.provider import Providers
 from werkzeug.exceptions import NotFound
 
 provider_bp = Blueprint('providers', __name__)

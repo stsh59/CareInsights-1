@@ -41,7 +41,7 @@
                             Hello, {{ current_user.username }}!
                         </span>
                         <div id="dropdownMenu" class="dropdown-menu">
-                            <a href="{{ url_for('logout') }}" class="logout-button">Log Out</a>
+                            <a href="{{ url_for('auth.logout') }}" class="logout-button">Log Out</a>
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
-from models import Supplies
-from db import db
+from models import db
+from models.supplies import Supplies
 from werkzeug.exceptions import BadRequest, NotFound
 
 supplies_bp = Blueprint('supplies', __name__)

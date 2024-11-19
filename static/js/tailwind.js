@@ -293,11 +293,6 @@ tailwind.config = {
                 4: "0px 0px 2px rgba(0, 0, 0, 0.2)",
                 5: "0px 1px 5px rgba(0, 0, 0, 0.2)",
             },
-            borderRadius: {
-                lg: "var(--radius)",
-                md: "calc(var(--radius) - 2px)",
-                sm: "calc(var(--radius) - 4px)",
-            },
             keyframes: {
                 "accordion-down": {
                     from: { height: "0" },

@@ -58,7 +58,10 @@ def logout():
 def dashboard():
     return render_template('dashboard.html')
 
-
+@auth_bp.route('/patient')
+@login_required
+def patient_table():
+    return render_template('patient.html')
 
 @auth_bp.route('/feature1')
 @login_required

@@ -1105,7 +1105,7 @@ function renderConditionTreeMapChart(containerId, data) {
         .slice(0, 10);
 
     // Dimensions
-    const width = container.offsetWidth || 1500; // Full width of the container
+    const width = 1500; // Full width of the container
     const height = 600; // Fixed height
 
     // Treemap setup

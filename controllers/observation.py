@@ -21,6 +21,21 @@ def get_observations():
         "message": "Observations retrieved successfully!"
     })
 
+@observation_bp.route('/patient/<patient_id>', methods=['GET'])
+def get_observations_by_patient_id(patient_id):
+    observations = Observations.query.filter(
+        Observations.CATEGORY.in_(['vital-signs']),
+        Observations.PATIENT == patient_id,
+        Observations.DESCRIPTION.in_(['Diastolic Blood Pressure', 'Systolic Blood Pressure', 'Heart Rate'])
+    ).all()
+
+    return jsonify({
+        "status": 200,
+        "data": {"observations": [observation.to_dict() for observation in observations]},
+        "message": "Observations retrieved successfully!"
+    })
+
+
 @observation_bp.route('/', methods=['POST'])
 def create_observation():
     data = request.get_json()

@@ -1,5 +1,6 @@
 from flask import Flask, redirect, url_for
 from flask_bcrypt import Bcrypt
+from flask_cors import CORS 
 from flask_login import LoginManager
 from config import Config
 from controllers import all_blueprints
@@ -9,6 +10,8 @@ from models import db
 
 app = Flask(__name__, template_folder='templates')
 app.config.from_object(Config)
+
+CORS(app)
 
 db.init_app(app)
 bcrypt.init_app(app)
